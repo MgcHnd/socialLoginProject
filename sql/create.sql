@@ -1,3 +1,9 @@
+DROP SCHEMA IF EXISTS socialLoginProject;
+CREATE SCHEMA IF NOT EXISTS socialLoginProject DEFAULT CHARACTER SET utf8;
+USE socialLoginProject;
+
+DROP TABLE IF EXISTS socialLoginProject.UserInfos;
+
 CREATE TABLE UserInfos (
   userId VARCHAR(60) PRIMARY KEY, -- What does this do?
   username VARCHAR(20),
@@ -6,12 +12,12 @@ CREATE TABLE UserInfos (
   updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()
 )
 
-INSERT INTO UserInfos (userId, username, profileImg, created, updated) VALUES
-('user1', 'Dexter', '/IMG/profile1.jpg', '2024-01-01 01:00:00', '2024-01-01 01:00:00'),
-('user2', 'Sophie', '/IMG/profile2.jpg', '2024-01-01 02:00:00', '2024-01-01 02:00:00'),
-('user3', 'Aiden', '/IMG/profile3.jpg', '2024-01-01 03:00:00', '2024-01-01 03:00:00'),
-('user4', 'Ethan', '/IMG/profile4.jpg', '2024-01-01 04:00:00', '2024-01-01 04:00:00'),
-('user5', 'Colin', '/IMG/profile5.jpg', '2024-01-01 05:00:00', '2024-01-01 05:00:00');
+INSERT INTO UserInfos (userId, username, profileImg) VALUES
+('user1', 'Dexter', '/IMG/profile1.jpg'),
+('user2', 'Sophie', '/IMG/profile2.jpg'),
+('user3', 'Aiden', '/IMG/profile3.jpg'),
+('user4', 'Ethan', '/IMG/profile4.jpg'),
+('user5', 'Colin', '/IMG/profile5.jpg');
 
 -- Query 1
 SELECT userId, username
